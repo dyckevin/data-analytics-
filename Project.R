@@ -18,8 +18,7 @@ decompose(torontoData.ts)
 stl(torontoData.ts,s.window="periodic")
 diffTorontoData<-diff(torontoData.ts)
 summary(diffTorontoData)
-
-
+-------------------------------------------------------------------------------------------------------------------------
 training<-window(torontoData.ts,end="2015-12-31 23:00:00",tz="EST")
 testing<-window(torontoData.ts,start="2016-01-01 00:00:00",tz="EST")
 decompose(torontoData.ts)
@@ -36,10 +35,7 @@ predictTesting2<-forecast(trainingModel2,h=17544)
 accuracy(fitted.values(testingModel2),testing)
 accuracy(fitted.values(predictTesting2),testing)
 #ARIMA model works better than ETS model.
-
-
-
-
+-------------------------------------------------------------------------------------------------------------------------
 Based on the new dataset, the following edits were made to the lines "1-6", please verify
 require(xts)
 require(forecast)
@@ -47,3 +43,4 @@ projectData<-read.csv("input_data_team_9.csv", header = TRUE)
 torontoData <- data.frame (Toronto=projectData[,3])
 time_index <- seq(from = as.POSIXct("2004-01-01 00:00",tz="EST"),to = as.POSIXct("2015-12-31 23:00",tz="EST"), by = "hour")
 torontoData.ts<-xts(torontoData,order.by = time_index)
+-------------------------------------------------------------------------------------------------------------------------
