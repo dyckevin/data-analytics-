@@ -606,3 +606,11 @@ plot(c(testing.ts), forecastedOptimalARIMA$mean, main = "Forecasted Against Test
 
 # Save the predicted values to the file "output_team_9.csv".
 write.csv(forecastedOptimalARIMA$mean, file = "output_team_9.csv")
+
+
+> Nicorettetraining.ts <- msts(Nicorettetraining[,3],seasonal.periods=c(13,13*4))
+> plot(stl(Nicorettetraining.ts,s.window="period"))
+> Nicorettetraining.ts <- ts(Nicorettetraining[,3],frequency=13)
+> plot(stl(Nicorettetraining.ts,s.window="period"))
+> Nicorettetraining.ts <- msts(Nicorettetraining[,3],seasonal.periods=c(13,13*4))
+> plot(stl(Nicorettetraining.ts,s.window="period"))
